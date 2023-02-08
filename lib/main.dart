@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 
 void main() {
+  FlutterTimezone.getLocalTimezone().then((value) {
+    print(value);
+  });
   runApp(const MyApp());
 }
 
