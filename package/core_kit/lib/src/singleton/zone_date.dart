@@ -7,6 +7,7 @@ import 'package:timezone/timezone.dart';
 
 import '../util/date_util.dart';
 
+/// 处理带时区时间的单例
 class ZoneDate {
   ZoneDate._internal() {
     initializeTimeZones();
@@ -50,7 +51,7 @@ class ZoneDate {
     return DateFormat(formatPattern).format(date);
   }
 
-  /// 将时间戳转换为 DateTime 对象，返回值不可为空。如果不传入默认值，则显示1970.01.01
+  /// 将时间戳转换为DateTime对象，返回值不可为空。如果不传入默认值，则显示1970.01.01
   /// - [timestampType] 时间戳的类型
   /// - [location] 时区
   /// - [defaultDate] 解析失败时的默认值
@@ -62,7 +63,7 @@ class ZoneDate {
   }) {
     final tmpLocation = location ?? local;
     if (timestamp == null) {
-      return defaultDate ?? TZDateTime(tmpLocation, 1979);
+      return defaultDate ?? TZDateTime(tmpLocation, 1970);
     }
     switch (timestampType) {
       case TimestampType.second:

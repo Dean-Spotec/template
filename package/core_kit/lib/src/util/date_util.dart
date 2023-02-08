@@ -38,6 +38,7 @@ enum TimestampType {
   microsecond, // 微秒
 }
 
+/// 处理时间的工具类。时间戳转时间、格式化时间
 class DateUtil {
   /// 格式化日期为字符串，字符串不为空
   /// - [formatPattern] 格式化字符串
@@ -70,7 +71,7 @@ class DateUtil {
     return DateFormat(formatPattern).format(date);
   }
 
-  /// 将时间戳转换为 DateTime 对象，返回值不可为空。如果不传入默认值，则显示1970.01.01
+  /// 将时间戳转换为DateTime对象，返回值不可为空。如果不传入默认值，则显示1970.01.01
   /// - [timestampType] 时间戳的类型
   /// - [defaultDate] 解析失败时的默认值
   static DateTime intToDate(

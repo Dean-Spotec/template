@@ -8,17 +8,14 @@ extension StringExtension on String {
     return replaceAll('', '\u200B');
   }
 
-  /// String 转 int
   int toInt({int defaultValue = 0}) {
     return int.tryParse(this) ?? defaultValue;
   }
 
-  /// String 转 double
   double toDouble({double defaultValue = 0.0}) {
     return double.tryParse(this) ?? defaultValue;
   }
 
-  /// String 转 bool
   bool toBool() {
     return toLowerCase() == true.toString();
   }
