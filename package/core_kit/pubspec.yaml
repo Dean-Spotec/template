@@ -16,6 +16,7 @@ dependencies:
   intl: ^0.18.0
   decimal: ^2.3.2
   shared_preferences: ^2.0.17
+  connectivity_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:
