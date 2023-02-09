@@ -4,9 +4,9 @@
 import 'package:flutter/cupertino.dart';
 
 class Context {
-  Context._internal();
 
   factory Context() => _instance;
+  Context._internal();
 
   static final Context _instance = Context._internal();
 

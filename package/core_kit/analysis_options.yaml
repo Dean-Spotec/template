@@ -1,7 +1,7 @@
 # This file configures the analyzer to use the lint rule set from `package:lint`
 
-# include: package:lint/strict.yaml # For production apps
-include: package:lint/casual.yaml # For code samples, hackathons and other non-production code
+include: package:lint/strict.yaml # For production apps
+# include: package:lint/casual.yaml # For code samples, hackathons and other non-production code
 # include: package:lint/package.yaml # Use this for packages with public API
 
 
@@ -15,7 +15,11 @@ analyzer:
 # can be found at https://dart-lang.github.io/linter/lints/options/options.html
 linter:
   rules:
-    # 使用绝对路径引用文件
+    # 禁止使用绝对路径引用文件
     always_use_package_imports: false
-    # 使用相对路径引用文件
+    # 推荐使用相对路径引用文件
     prefer_relative_imports: true
+    # 可以创建只含有静态方法的类
+    avoid_classes_with_only_static_members: false
+    # 不对pub引入的库进行排序
+    sort_pub_dependencies: false

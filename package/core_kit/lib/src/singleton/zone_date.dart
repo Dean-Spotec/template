@@ -9,13 +9,13 @@ import '../util/date_util.dart';
 
 /// 处理带时区时间的单例
 class ZoneDate {
+
+  factory ZoneDate() => _instance;
   ZoneDate._internal() {
     initializeTimeZones();
     // 默认设置本地时区为utc
     setLocalLocation(UTC);
   }
-
-  factory ZoneDate() => _instance;
 
   static final ZoneDate _instance = ZoneDate._internal();
 
@@ -70,10 +70,10 @@ class ZoneDate {
         return TZDateTime.fromMillisecondsSinceEpoch(tmpLocation, timestamp);
       case TimestampType.millisecond:
         return TZDateTime.fromMillisecondsSinceEpoch(
-            tmpLocation, timestamp * 1000);
+            tmpLocation, timestamp * 1000,);
       case TimestampType.microsecond:
         return TZDateTime.fromMicrosecondsSinceEpoch(
-            tmpLocation, timestamp * 1000000);
+            tmpLocation, timestamp * 1000000,);
     }
   }
 }
